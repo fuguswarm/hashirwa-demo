@@ -1,0 +1,103 @@
+{
+  "items": [
+    {
+      "id": 154454,
+      "status": "approved",
+      "metadata": {
+        "rwa_version": 1,
+        "standard": "hashirwa-demo",
+        "issuer": "Shizuoka Green Tea Co.",
+        "jurisdiction": {
+          "country": "Japan",
+          "prefecture": "静岡県"
+        },
+        "asset": {
+          "category": "Agriculture",
+          "product": "Green Tea",
+          "certification": "JAS Organic",
+          "lot_size": "500kg",
+          "harvest_date": "2024-05-15"
+        },
+        "contacts": {
+          "email": "info@shizuoka-tea.jp",
+          "wallet": "0x1234567890abcdef1234567890abcdef12345678"
+        },
+        "notes": "Premium grade sencha from mountain slopes"
+      },
+      "proof": {
+        "hash": "822ecb5c1da47afdf39546538679670c5624f9d2ed93e97e0cd603c76bec3cf6",
+        "sim_testnet_txid": "testnet:822ecb5c1da47afd"
+      },
+      "timestamps": {
+        "created_at": "2025-08-17T11:01:11.154443",
+        "updated_at": "2025-08-17T11:01:11.154443"
+      }
+    },
+    {
+      "id": 154541,
+      "status": "approved",
+      "metadata": {
+        "rwa_version": 1,
+        "standard": "hashirwa-demo",
+        "issuer": "Aomori Apple Farmers Union",
+        "jurisdiction": {
+          "country": "Japan",
+          "prefecture": "青森県"
+        },
+        "asset": {
+          "category": "Agriculture",
+          "product": "Apple",
+          "certification": "JGAP",
+          "lot_size": "1000kg",
+          "harvest_date": "2024-10-20"
+        },
+        "contacts": {
+          "email": "contact@aomori-apples.jp",
+          "wallet": "0xabcdef1234567890abcdef1234567890abcdef12"
+        },
+        "notes": "Fuji apples from certified organic farms"
+      },
+      "proof": {
+        "hash": "f119de62e2ddb625ca4dfb20d108563266f48da8f6fdeb8b6cd252bdf7380d62",
+        "sim_testnet_txid": "testnet:f119de62e2ddb625"
+      },
+      "timestamps": {
+        "created_at": "2025-08-17T11:01:11.154443",
+        "updated_at": "2025-08-17T11:01:11.154443"
+      }
+    },
+    {
+      "id": 154560,
+      "status": "approved",
+      "metadata": {
+        "rwa_version": 1,
+        "standard": "hashirwa-demo",
+        "issuer": "Hokkaidō Rice Collective",
+        "jurisdiction": {
+          "country": "Japan",
+          "prefecture": "北海道"
+        },
+        "asset": {
+          "category": "Agriculture",
+          "product": "Rice",
+          "certification": "JA",
+          "lot_size": "2000kg",
+          "harvest_date": "2024-09-30"
+        },
+        "contacts": {
+          "email": "hello@hokkaido-rice.jp",
+          "wallet": "0x567890abcdef1234567890abcdef1234567890ab"
+        },
+        "notes": "Premium short-grain rice variety"
+      },
+      "proof": {
+        "hash": "0741a7eed1bd656d0246022c66387667dde1b98d5719bdfeb6afc78054791352",
+        "sim_testnet_txid": "testnet:0741a7eed1bd656d"
+      },
+      "timestamps": {
+        "created_at": "2025-08-17T11:01:11.154443",
+        "updated_at": "2025-08-17T11:01:11.154443"
+      }
+    }
+  ]
+}
