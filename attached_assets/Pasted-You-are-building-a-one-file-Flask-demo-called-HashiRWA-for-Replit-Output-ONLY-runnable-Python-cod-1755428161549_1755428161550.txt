@@ -1,0 +1,38 @@
+You are building a one-file Flask demo called “HashiRWA” for Replit. Output ONLY runnable Python code, no commentary.
+
+Requirements:
+- Single file: main.py using Flask. Persist data in db.json (create if missing).
+- Pages:
+  1) "/" landing with brief EN/JP copy explaining onboarding → review → publish, and that on-chain is simulated via a hash.
+  2) "/onboard" GET/POST: form fields = producer_name*, prefecture* (Japan list), product* (Rice/Green Tea/Apple/Strawberry/Vegetable/Fruit/Other), certification (JA/JGAP/JAS Organic/Other), lot_size*, harvest_date*, contact_email, wallet_address, notes. Save as status="pending".
+  3) "/admin" GET: gated by query param ?k=ADMIN_KEY (default "hashirwa" or from env). Show pending queue with Approve/Reject buttons (POST to /admin/approve/<id> and /admin/reject/<id>). Also list approved items.
+  4) "/market" public list of approved items (newest first) with short details and link to each listing page.
+  5) "/listing/<id>" detail view: show fields + Proof section.
+  6) "/metadata/<id>.json" returns JSON: {id, status, metadata, proof{hash, sim_testnet_txid}, timestamps{created_at,updated_at}}.
+
+Behavior:
+- On create or seed, build a "metadata" dict (rwa_version=1, standard="hashirwa-demo", issuer=producer_name, jurisdiction{country:"Japan",prefecture}, asset{category:"Agriculture",product,certification,lot_size,harvest_date}, contacts{email,wallet}, notes).
+- Compute proof hash = sha256(json.dumps(metadata, sort_keys=True, ensure_ascii=False)).
+- sim_testnet_txid = "testnet:" + first 16 chars of hash.
+- Seed 3 APPROVED records if db empty: Shizuoka Green Tea Co. (JAS Organic), Aomori Apple Farmers Union (JGAP), Hokkaidō Rice Collective (JA).
+
+UX:
+- Minimal modern CSS (inlined) with dark theme, badges, cards, grid.
+- Landing has buttons to Onboard and Marketplace + a short JP line.
+- After submission, show a confirmation page with ID, proof hash, sim tx, link to listing, and “Download JSON” (metadata route).
+- Admin shows timestamps (YYYY-MM-DD HH:MM) via a template filter.
+- Sorting: admin pending by created_at asc; approved by updated_at desc; market by updated_at desc.
+
+Tech:
+- Use only stdlib + Flask.
+- Port from env PORT or default 8080; host 0.0.0.0; debug=True.
+- Safe JSON dumps with ensure_ascii=False and indent=2.
+- Avoid external templates (use render_template_string).
+- No JS frameworks.
+
+Edge cases:
+- Handle missing listing id with 404.
+- If admin key wrong, show hint and input field.
+- Clean .strip() inputs; required fields validated by HTML attributes.
+
+At the top, include a short docstring with quick run instructions for Replit.
