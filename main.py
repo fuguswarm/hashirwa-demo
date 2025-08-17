@@ -244,10 +244,32 @@ body {
 .admin-actions { margin-top: 16px; }
 .admin-actions form { display: inline; }
 .jp-text { color: #888; font-style: italic; margin-top: 8px; }
+.tanuki-section {
+    text-align: center;
+    margin: 32px 0;
+}
+.tanuki-image {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+.tanuki-image:hover {
+    transform: translateY(-2px);
+}
+.tanuki-caption {
+    margin-top: 16px;
+    font-size: 1rem;
+    color: #a0a0a0;
+    font-style: italic;
+}
 @media (max-width: 768px) {
     .container { padding: 12px; }
     .header h1 { font-size: 2rem; }
     .grid { grid-template-columns: 1fr; }
+    .tanuki-image { max-width: 100%; }
 }
 </style>
 """
@@ -299,6 +321,11 @@ def landing():
                     オンチェーンの統合はハッシュによりシミュレートされています
                     <br>On-chain integration is simulated via cryptographic hashing
                 </div>
+            </div>
+            
+            <div class="tanuki-section">
+                <img src="/static/tanuki.png" alt="HashiRWA Tanuki Mascot" class="tanuki-image">
+                <div class="tanuki-caption">農業からWeb3へ — A bridge from Japanese agriculture to Web3</div>
             </div>
         </div>
     </body>
