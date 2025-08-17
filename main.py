@@ -566,7 +566,7 @@ def admin():
                     <p><strong>Product:</strong> {item["metadata"]["asset"]["product"]} ({item["metadata"]["asset"]["lot_size"]})</p>
                     <p><strong>Prefecture:</strong> {item["metadata"]["jurisdiction"]["prefecture"]}</p>
                     <p><strong>Certification:</strong> {item["metadata"]["asset"]["certification"]}</p>
-                    <p><strong>Submitted:</strong> {item["timestamps"]["created_at"] | datetime}</p>
+                    <p><strong>Submitted:</strong> {datetime_filter(item["timestamps"]["created_at"])}</p>
                     
                     <div class="admin-actions">
                         <form method="POST" action="/admin/approve/{item["id"]}?k={admin_key}">
@@ -590,7 +590,7 @@ def admin():
                     <h3>{item["metadata"]["issuer"]}</h3>
                     <p><strong>Product:</strong> {item["metadata"]["asset"]["product"]} ({item["metadata"]["asset"]["lot_size"]})</p>
                     <p><strong>Prefecture:</strong> {item["metadata"]["jurisdiction"]["prefecture"]}</p>
-                    <p><strong>Approved:</strong> {item["timestamps"]["updated_at"] | datetime}</p>
+                    <p><strong>Approved:</strong> {datetime_filter(item["timestamps"]["updated_at"])}</p>
                     <span class="badge badge-approved">Approved</span>
                     <a href="/listing/{item["id"]}" class="btn btn-secondary" style="margin-left: 12px;">View Listing</a>
                 </div>
@@ -674,7 +674,7 @@ def market():
                     <p><strong>Harvest:</strong> {item["metadata"]["asset"]["harvest_date"]}</p>
                     
                     <div class="text-sm">
-                        Tokenized: {item["timestamps"]["updated_at"] | datetime}
+                        Tokenized: {datetime_filter(item["timestamps"]["updated_at"])}
                     </div>
                     
                     <div class="mt-4">
@@ -758,8 +758,8 @@ def listing(item_id):
                     </p>
                     
                     <div class="text-sm">
-                        <p><strong>Created:</strong> {item["timestamps"]["created_at"] | datetime}</p>
-                        <p><strong>Last Updated:</strong> {item["timestamps"]["updated_at"] | datetime}</p>
+                        <p><strong>Created:</strong> {datetime_filter(item["timestamps"]["created_at"])}</p>
+                        <p><strong>Last Updated:</strong> {datetime_filter(item["timestamps"]["updated_at"])}</p>
                         <p><strong>RWA Standard:</strong> {item["metadata"]["standard"]} v{item["metadata"]["rwa_version"]}</p>
                     </div>
                 </div>
