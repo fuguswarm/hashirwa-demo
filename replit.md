@@ -1,8 +1,10 @@
-# HashiRWA - RWA Tokenization Demo
+# HashiRWA: Japan Agri-RWA Gateway with AI
 
 ## Overview
 
-HashiRWA is a Real World Asset (RWA) tokenization demonstration platform focused on Japanese agricultural products. The application simulates blockchain integration for tokenizing agricultural assets like rice, green tea, apples, and strawberries. It provides a complete workflow from producer onboarding through administrative review to public marketplace listing, with simulated blockchain proof generation using cryptographic hashes and testnet transaction IDs.
+HashiRWA is a working prototype demonstrating how Japanese agricultural producers can onboard their products as real-world assets (RWA). The demo simulates the flow from producer onboarding → admin review → public marketplace → cryptographic proof of listing.
+
+This Real World Asset (RWA) tokenization demonstration platform is focused on Japanese agricultural products. The application simulates blockchain integration for tokenizing agricultural assets like rice, green tea, apples, and strawberries. It provides a complete workflow from producer onboarding through administrative review to public marketplace listing, with simulated blockchain proof generation using cryptographic hashes and testnet transaction IDs.
 
 ## User Preferences
 

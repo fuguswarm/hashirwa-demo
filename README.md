@@ -1,34 +1,97 @@
-HashiRWA Demo
+# HashiRWA: Japan Agri-RWA Gateway with AI
 
-HashiRWA is a prototype platform for onboarding Japanese agricultural products into blockchain as real-world assets (RWA).
+**A prototype bridging Japanese agriculture to Web3**
 
-This demo shows the basic flow: producer onboarding → admin review → public marketplace → proof hash (simulated on-chain).
+## Overview
 
-Routes
+HashiRWA is a working prototype demonstrating how Japanese agricultural producers can onboard their products as real-world assets (RWA). The demo simulates the flow from producer onboarding → admin review → public marketplace → cryptographic proof of listing.
 
-/ — Landing page
+## Key Features
 
-/onboard — Producer onboarding form
+🌱 **Onboarding** — Producers register with product, certification, harvest date, lot size.
 
-/admin?k=hashirwa — Admin panel (review + approve)
+✅ **Admin Review** — Submissions can be approved or rejected for compliance.
 
-/market — Public marketplace of approved listings
+🛒 **Marketplace** — Approved products are listed publicly with details.
 
-/listing/<id> — Detail page for a specific product
+🔗 **Proof of Listing** — Each listing generates a SHA-256 hash + downloadable JSON metadata (simulated "on-chain").
 
-/metadata/<id>.json — JSON metadata with proof hash
+## Tech Stack
 
-How to Run
-pip install flask
-python main.py
+- **Python + Flask** (backend)
+- **JSON** for data persistence (local simulation)
+- **Minimal CSS** dark theme UI
+- **Cryptographic hashing** for proof generation
+- **Simulated blockchain** integration via testnet transaction IDs
 
+## Quick Start
 
-Runs on http://localhost:8080 (Replit auto-runs if deployed there).
+1. **Run the application:**
+   ```bash
+   python main.py
+   ```
 
-Notes
+2. **Access the platform:**
+   - Open browser to the provided URL (default: http://localhost:8080)
+   - Use admin key 'hashirwa' or set ADMIN_KEY env var
+   - Port defaults to 8080 or use PORT env var
 
-Data stored locally in db.json (not included in repo).
+3. **Platform workflow:**
+   - Visit homepage to understand the process
+   - Use "Start Onboarding" to register agricultural products
+   - Access admin panel with `?k=hashirwa` to review submissions
+   - Browse approved products in the marketplace
+   - View individual listings with cryptographic proof
 
-“On-chain” behavior is simulated via cryptographic hashing for proof-of-concept only.
+## Platform Pages
 
-Built with Python + Flask, minimal CSS for responsive dark-theme UI.
+- **/** - Landing page with platform explanation and tanuki mascot
+- **/onboard** - Producer registration form with Japanese prefectures
+- **/admin** - Administrative review panel (requires admin key)
+- **/market** - Public marketplace of approved products
+- **/listing/<id>** - Individual product details with proof
+- **/metadata/<id>.json** - Machine-readable JSON metadata
+
+## Features
+
+### Producer Onboarding
+- Comprehensive form with Japanese prefecture selection
+- Product categories: Rice, Green Tea, Apple, Strawberry, Vegetable, Fruit, Other
+- Certification support: JA, JGAP, JAS Organic, Other
+- Contact information and blockchain wallet integration
+
+### Administrative Review
+- Queue management for pending submissions
+- Approval/rejection workflow with timestamps
+- Status tracking and audit trail
+
+### Marketplace
+- Public listing of verified agricultural products
+- Search and browse functionality
+- Cryptographic proof display
+- Responsive design with dark theme
+
+### Blockchain Simulation
+- SHA-256 hash generation for tamper-evident proofs
+- Simulated testnet transaction IDs
+- Downloadable JSON metadata for each asset
+- RWA standard compliance with version tracking
+
+## Sample Data
+
+The platform comes pre-seeded with three verified agricultural products:
+- **Shizuoka Green Tea Co.** - JAS Organic certified green tea
+- **Aomori Apple Farmers Union** - JGAP certified apples
+- **Hokkaidō Rice Collective** - JA certified premium rice
+
+## Access
+
+**GitHub Repo** (code + documentation): https://github.com/fuguswarm/hashirwa-demo
+
+## Disclaimer
+
+This is a proof-of-concept demo. "On-chain" functionality is simulated via cryptographic hashing. A full blockchain deployment will be implemented in later phases.
+
+---
+
+*Demo document prepared for proposal review • © 2025 HashiRWA*
